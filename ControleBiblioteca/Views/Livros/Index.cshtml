@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ControleBiblioteca.Models.Livros>
+
+@*@{
+    ViewBag.Title = "Index";
+}*@
+
+<p>
+    @Html.ActionLink("Cadastro de livro", "Cadastrar", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCodBarra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.DtCadastro)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.NomeLivro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DtPublicacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QtdPaginas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unidade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCodBarra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.DtCadastro)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeLivro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DtPublicacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QtdPaginas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor)
+        </td>
+        <th>
+            @Html.DisplayFor(modelItem => item.Unidade)
+        </th>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { id = item.IdCodBarra }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id = item.IdCodBarra }) |
+            @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>

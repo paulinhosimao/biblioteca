@@ -1,0 +1,107 @@
+﻿@model ControleBiblioteca.Models.Livros
+
+@*@{
+    ViewBag.Title = "Detalhes";
+}*@
+
+
+<div>
+    <h4>Detalhes do Livro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCodBarra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdCodBarra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DtCadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DtCadastro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeLivro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeLivro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DtPublicacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DtPublicacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QtdPaginas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QtdPaginas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Unidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgCapa)
+        </dt>
+
+        <dd>
+            @if (Model.IdCodBarra == 01010)
+            {
+                <img src="~/Images/monge_.jpg" height="100px" width="70px" />
+            }
+
+            @if (Model.IdCodBarra == 02020)
+            {
+                <img src="~/Images/estrelas.jpg" height="100px" width="70px" />
+            }
+
+            @if (Model.IdCodBarra == 030303)
+            {
+                <img src="~/Images/espada.jpg" height="100px" width="70px" />
+            }
+
+            @if (Model.IdCodBarra == 040404)
+            {
+                <img src="~/Images/principe.jpg" height="100px" width="70px" />
+            }
+            @*@Html.DisplayFor(model => model.Im)*@
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Livros", new { @id = Model.IdCodBarra }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
